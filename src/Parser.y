@@ -72,8 +72,8 @@ Close
   | error {% popLayout }
 
 Decl
-  : VAR '=' Expr { Decl $1 $3 Nothing }
-  | VAR '=' Expr 'where' DeclBlock { Decl $1 $3 (Just $5) }
+  : VAR '=' Expr { Decl $1 $3 Nothing Nothing }
+  | VAR '=' Expr 'where' DeclBlock { Decl $1 $3 (Just $5) Nothing }
 {
 lexer cont = scan >>= cont
 

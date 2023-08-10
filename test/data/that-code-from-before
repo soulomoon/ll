@@ -1,0 +1,4 @@
+foo = let x = let
+            y = z
+            in y
+      in x

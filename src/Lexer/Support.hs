@@ -34,13 +34,13 @@ data AlexInput
           }
   deriving (Eq, Show)
 
-alexPrevInputChar :: AlexInput -> Char
-alexPrevInputChar = inpLast
+-- alexPrevInputChar :: AlexInput -> Char
+-- alexPrevInputChar = inpLast
 
 alexGetByte :: AlexInput -> Maybe (Word8, AlexInput)
 alexGetByte inp@Input{inpStream = str} = advance <$> uncons str where
   advance ('\n', rest) =
-    ( fromIntegral (ord '\n')
+    ( fromIntegral $ ord '\n'
     , Input { inpLine = inpLine inp + 1
             , inpColumn = 0
             , inpLast = '\n'
