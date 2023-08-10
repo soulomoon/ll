@@ -49,12 +49,12 @@ two way to nest, one is to use indentation, the other is to use braces
 
 ```haskell
 x :: Int
-x = where
-    y = 2
-    x = 3
-    where 
-      z = x + y
-      z
+x = z 
+    t where
+      y = 2
+      x = 3
+      where 
+        z = x + y
 ```
 
 * type declarations
