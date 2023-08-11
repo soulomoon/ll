@@ -34,6 +34,9 @@ data Decl
          }
   deriving (Eq, Show)
 
+
+
+
 -- untyped lambda calculus
 data ExprE
   = VarE String
@@ -50,8 +53,9 @@ data DeclE
 type Program = [Decl]
 
 declToE :: Decl -> DeclE
-declToE (Decl n r Nothing Nothing) = DeclE n (eToE r)
-declToE (Decl n r (Just w) Nothing) = DeclE n $ eToE (Let w r)
+declToE (Decl n r Nothing _) = DeclE n (eToE r)
+declToE (Decl n r (Just w) _) = DeclE n $ eToE (Let w r)
+
 
 eToE :: Expr -> ExprE
 eToE (Var n) = VarE n
